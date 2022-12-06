@@ -1,0 +1,24 @@
+version: '3.3'
+services:
+  discovery-server:
+    image: fernandohdez88/eureka-discovery:0.0.1-snapshot
+    ports:
+      - 8761:8761
+  postgres-service:
+    build: servicesData/postgresdb/
+    environment:
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - 5432:5432
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d postgres
+  microservice-social-network:
+    image: fernandohdez88/microservice-sn-compose:0.0.1-snapshot
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-service:5432/social_network
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres-service
+  
