@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f999f2f-6ffb-446d-b5b1-0764b4223214" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../discovery-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-server/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-server/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/rabbitmq/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/rabbitmq/Publisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/rabbitmq/PublisherConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../notification-service/src/main/java/com/socialnetwork/notificationservice/rabbitmq/Consumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../microservice/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../notification-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../notification-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,6 +1,6 @@
-
-server:  
+server:
   port: ${PORT:8081}
+  contextPath: /microservice-social-network
 
 instance.id: ${random.value}
 
@@ -39,3 +39,22 @@ spring:
       ddlAuto: validate
       namingStrategy: org.hibernate.cfg.EJB3NamingStrategy
     show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+logging:
+  file: logs/application.log
+  level:
+    root: INFO
+    org.springframework.web: ERROR
+  pattern:
+    console: "%m\r\n"
+
+topic:
+  queue:
+    name: topicRabittMessage
+
+

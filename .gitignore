@@ -3,3 +3,5 @@ monitor-service/.gradle/
 
 monitor-service/build/
 Back-TechnicalExamBA.zip
+
+microservice/logs/application.log
