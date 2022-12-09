@@ -5,11 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f999f2f-6ffb-446d-b5b1-0764b4223214" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/AppController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/entity/PostsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/entity/UsersEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/model/NotificationDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/remote/NotificationsRemoteClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/repository/PostsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/post/PostsNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/post/PostsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/post/PostsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/user/UsersNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/user/UsersService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/user/UsersServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../notification-service/src/main/java/com/socialnetwork/notificationservice/NotificationServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../notification-service/src/main/java/com/socialnetwork/notificationservice/entity/NotificationsEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../microservice/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/ClientesServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/ClientesServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/ClientesServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/ServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/ApiExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/ApiExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/ClientesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/entity/Clientes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/repository/ClientesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/repository/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/cliente/ClienteNoEncontradoException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/cliente/ClientesService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/cliente/ClientesServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../microservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/src/main/resources/db/migration/V1__create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/resources/db/migration/V1__create_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +88,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Repositorios/MicroserviciosCurso/Examen/monitor-service"
+    "last_opened_file_path": "D:/Repositorios/MicroserviciosCurso/Examen/notification-service"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Up-Monitor-Service">

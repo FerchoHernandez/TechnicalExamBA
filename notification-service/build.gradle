@@ -20,16 +20,16 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: com.bmuschko.gradle.docker.DockerRemoteApiPlugin
 
 
-group = 'com.socialnetwork.microservice'
+group = 'com.socialnetwork.notification.service'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 springBoot {
-  mainClass = 'com.socialnetwork.microservice.ClientesServiceApplication'
+  mainClass = 'com.socialnetwork.notificationservice.NotificationServiceApplication'
 }
 
 jar {
-  baseName = 'microservice-sn'
+  baseName = 'notification-service-sn'
   version = ''
 }
 
@@ -53,9 +53,6 @@ dependencies {
   compile('org.springframework.cloud:spring-cloud-starter-eureka')
   //MONITORING SERVICE
   compile('de.codecentric:spring-boot-admin-starter-client')
-  //CIRCUIT BREAKER
-  compile 'org.springframework.cloud:spring-cloud-starter-openfeign'
-  compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 }
 
 dependencyManagement {
@@ -69,15 +66,15 @@ task createDockerfile(type: com.bmuschko.gradle.docker.tasks.image.Dockerfile) {
   destFile = project.file('build/libs/Dockerfile')
   from 'openjdk:8u151-jre-slim'
   maintainer '"marcosf6009.fh@gmail.com"'
-  copyFile 'microservice-sn.jar', '/opt/microservice-sn.jar'
-  exposePort 8081
+  copyFile 'notification-service-sn.jar', '/opt/notification-service-sn.jar'
+  exposePort 8082
   entryPoint 'java', '-Djava.security.egd=file:/dev/./urandom', '-jar', '/opt/microservice-sn.jar'
 }
 
 task buildImage(type: com.bmuschko.gradle.docker.tasks.image.DockerBuildImage) {
   dependsOn createDockerfile
   inputDir = createDockerfile.destFile.parentFile
-  tag = 'fernandohdez88/microservice-sn-compose:' + project.version.toLowerCase()
+  tag = 'fernandohdez88/notification-service-sn-compose:' + project.version.toLowerCase()
 }
 
 createDockerfile.dependsOn bootRepackage

@@ -1,4 +1,4 @@
-package com.socialnetwork.microservice.api;
+package com.socialnetwork.notificationservice.api;
 
 import java.util.HashMap;
 
@@ -10,15 +10,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.socialnetwork.microservice.service.user.UsersNotFoundException;
 
 @RestControllerAdvice
 public class ApiExceptionHandler {
 	@Autowired
 	private ObjectMapper objectMapper;
 
-	@ExceptionHandler(UsersNotFoundException.class)
-	public HttpEntity notFound(UsersNotFoundException exception) {
+	@ExceptionHandler(com.socialnetwork.notificationservice.service.notification.NotificationsNotFoundException.class)
+	public HttpEntity notFound(com.socialnetwork.notificationservice.service.notification.NotificationsNotFoundException exception) {
 
 		HashMap<String, Object> body = new HashMap<>();
 		body.put("id", exception.getId());

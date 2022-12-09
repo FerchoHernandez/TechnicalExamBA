@@ -5,9 +5,9 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.socialnetwork.microservice.entity.Clientes;
+import com.socialnetwork.microservice.entity.UsersEntity;
 
-public interface ClientesRepository extends JpaRepository<Clientes, String> {
+public interface UsersRepository extends JpaRepository<UsersEntity, String> {
 
-	Optional<Clientes> findById(@Param("id") String id);
+	Optional<UsersEntity> findById(@Param("id") Long id);
 }
