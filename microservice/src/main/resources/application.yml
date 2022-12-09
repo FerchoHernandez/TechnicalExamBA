@@ -39,4 +39,3 @@ spring:
       ddlAuto: validate
       namingStrategy: org.hibernate.cfg.EJB3NamingStrategy
     show-sql: true
-

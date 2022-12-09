@@ -45,6 +45,7 @@ dependencyManagement {
 
 dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+	implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

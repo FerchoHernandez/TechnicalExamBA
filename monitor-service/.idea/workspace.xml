@@ -5,32 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f999f2f-6ffb-446d-b5b1-0764b4223214" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/AppController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/entity/PostsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/entity/UsersEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/model/NotificationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/remote/NotificationsRemoteClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/repository/PostsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/post/PostsNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/post/PostsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/post/PostsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/user/UsersNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/user/UsersService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/user/UsersServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../notification-service/src/main/java/com/socialnetwork/notificationservice/NotificationServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../notification-service/src/main/java/com/socialnetwork/notificationservice/entity/NotificationsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-server/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-server/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../microservice/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/ClientesServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/ServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/ApiExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/ApiExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/api/ClientesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/entity/Clientes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/repository/ClientesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/repository/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/cliente/ClienteNoEncontradoException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/cliente/ClientesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/java/com/socialnetwork/microservice/service/cliente/ClientesServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../microservice/src/main/resources/db/migration/V1__create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/src/main/resources/db/migration/V1__create_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +43,6 @@
                 <item name="monitor-service" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="monitor-service" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -84,13 +61,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Repositorios/MicroserviciosCurso/Examen/notification-service"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Desarrollos/curso/TechnicalExamBA/discovery-server&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Up-Monitor-Service">
     <configuration name="Up-Monitor-Service" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -142,5 +124,16 @@
       <updated>1670301530839</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
