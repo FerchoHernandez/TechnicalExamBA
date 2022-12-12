@@ -62,10 +62,10 @@ task createDockerfile(type: com.bmuschko.gradle.docker.tasks.image.Dockerfile) {
   destFile = project.file('build/libs/Dockerfile')
   from 'openjdk:8u151-jre-slim'
   maintainer 'marcosf6009.fh@gmail.com'
-  copyFile 'monitor-server.jar', '/opt/monitor-server.jar'
+  copyFile 'monitor-service.jar', '/opt/monitor-service.jar'
 
   exposePort 8090
-  entryPoint 'java', "-Djava.awt.headless=true",'-jar', '/opt/monitor-server.jar'
+  entryPoint 'java', "-Djava.awt.headless=true",'-jar', '/opt/monitor-service.jar'
 }
 
 task buildImage(type: com.bmuschko.gradle.docker.tasks.image.DockerBuildImage) {

@@ -22,6 +22,7 @@ public class MessagesEntity implements Serializable {
 
     @Column(name = "user_id")
     private int userId;
+    
     @Column(name = "conversation_id")
     private int conversationId;
 
