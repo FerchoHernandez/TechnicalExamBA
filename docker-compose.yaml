@@ -4,6 +4,10 @@ services:
     image: fernandohdez88/eureka-discovery:0.0.1-snapshot
     ports:
       - 8761:8761
+  monitor:
+    image: fernandohdez88/monitor-service-admin:0.0.1-snapshot
+    ports:
+      - 8090:8090
   postgres-service:
     build: servicesData/postgresdb/
     environment:
@@ -12,6 +16,7 @@ services:
       - 5432:5432
     volumes:
       - ./scripts:/docker-entrypoint-initdb.d postgres
+
   microservice-social-network:
     image: fernandohdez88/microservice-sn-compose:0.0.1-snapshot
     restart: always
@@ -21,4 +26,7 @@ services:
       - "8081:8081"
     depends_on:
       - postgres-service
+      - discovery-server
+      - monitor
+
   

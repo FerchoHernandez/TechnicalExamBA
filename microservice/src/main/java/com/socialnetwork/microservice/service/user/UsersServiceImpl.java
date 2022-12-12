@@ -28,14 +28,4 @@ public class UsersServiceImpl implements UsersService {
         return usersRepository.findById(idUser)
                 .orElseThrow(() -> new UsersNotFoundException("User not found:", idUser));
     }
-
-    @Override
-    public void deleteUser(Long idUser) {
-
-        UsersEntity users = usersRepository.findById(idUser)
-                .orElseThrow(() -> new UsersNotFoundException("User not found:: ", idUser));
-
-        usersRepository.delete(users);
-    }
-
 }

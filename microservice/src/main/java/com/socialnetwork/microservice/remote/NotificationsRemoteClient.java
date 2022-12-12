@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(name = "notification-service-social-network")
 public interface NotificationsRemoteClient {
 
-    @RequestMapping(method = POST, value = "api/notifcations", produces = "application/json")
+    @RequestMapping(method = POST, value = "notification-sn/api/notifcations", produces = "application/json")
     NotificationDto createNotification(@RequestBody NotificationDto newNotification);
 }

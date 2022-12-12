@@ -3,11 +3,12 @@ package com.socialnetwork.microservice.entity;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "posts")
-public class PostsEntity {
+public class PostsEntity implements Serializable  {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -87,5 +88,18 @@ public class PostsEntity {
 
     public void setCreated_at(Date created_at) {
         this.created_at = created_at;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", receptorTypeId=" + receptorTypeId +
+                ", authorRefId=" + authorRefId +
+                ", postTypeId=" + postTypeId +
+                ", created_at=" + created_at +
+                '}';
     }
 }

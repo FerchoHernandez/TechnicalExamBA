@@ -4,10 +4,9 @@ import com.socialnetwork.microservice.entity.UsersEntity;
 
 public interface UsersService {
 
-	UsersEntity saveUser(UsersEntity newUser);
+    UsersEntity saveUser(UsersEntity newUser);
 
-	UsersEntity searchUser(Long idUser);
+    UsersEntity searchUser(Long idUser);
 
-	void deleteUser(Long idUser);
 
 }

@@ -52,3 +52,10 @@ CREATE TABLE IF NOT EXISTS "users" (
 	PRIMARY KEY ("id")
 );
 
+CREATE TABLE "backups_notifications" (
+	"id" SERIAL NOT NULL,
+	"type" VARCHAR(100) NOT NULL,
+	"data" TEXT NOT NULL,
+	"created_at" TIMESTAMP NOT NULL,
+	PRIMARY KEY ("id")
+)

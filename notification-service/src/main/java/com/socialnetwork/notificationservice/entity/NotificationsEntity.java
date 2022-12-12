@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "notifications")
 public class NotificationsEntity implements Serializable {

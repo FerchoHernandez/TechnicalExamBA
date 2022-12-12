@@ -5,9 +5,11 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 import static org.springframework.http.HttpStatus.OK;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.socialnetwork.microservice.entity.MessagesEntity;
 import com.socialnetwork.microservice.entity.PostsEntity;
 import com.socialnetwork.microservice.model.NotificationDto;
 import com.socialnetwork.microservice.remote.NotificationsRemoteClient;
+import com.socialnetwork.microservice.service.message.MessagesServiceImpl;
 import com.socialnetwork.microservice.service.post.PostsServiceImpl;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +28,7 @@ import com.socialnetwork.microservice.service.user.UsersServiceImpl;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("microservice-sn/api")
 public class AppController {
 
     private static final Logger log = Logger.getLogger(AppController.class);
@@ -37,51 +39,48 @@ public class AppController {
     private PostsServiceImpl postsService;
 
     @Autowired
-    private NotificationsRemoteClient notificationsRemoteClient;
-
-    @GetMapping("/users/{id}")
-    @ResponseStatus(OK)
-    public UsersEntity leer(@PathVariable("id") Long idUser) {
-        log.info("Search a User by ID");
-        return usersService.searchUser(idUser);
-    }
+    private MessagesServiceImpl messagesService;
 
     @PostMapping("/users")
     @ResponseStatus(CREATED)
-    public UsersEntity crear(@RequestBody UsersEntity newUser) {
+    public UsersEntity createUser(@RequestBody UsersEntity newUser) {
         log.info("Create new User");
         return usersService.saveUser(newUser);
     }
 
-    @DeleteMapping("/users/{id}")
-    @ResponseStatus(NO_CONTENT)
-    public void borrar(@PathVariable("id") Long idUser) {
-        log.info("Delete a user by ID");
-        usersService.deleteUser(idUser);
+    @GetMapping("/users/{id}")
+    @ResponseStatus(OK)
+    public UsersEntity getUserById(@PathVariable("id") Long idUser) {
+        log.info("Search a User by ID");
+        return usersService.searchUser(idUser);
     }
 
     @PostMapping("/posts")
     @ResponseStatus(CREATED)
-    @HystrixCommand(fallbackMethod = "fallbackToNotificationService")
-    public PostsEntity crearPost(@RequestBody PostsEntity newPost) {
+    public PostsEntity createPost(@RequestBody PostsEntity newPost) {
         log.info("Create new Post");
-        PostsEntity postCreated = postsService.savePost(newPost);
-
-        if(Objects.nonNull(postCreated)){
-            NotificationDto newNotification = new NotificationDto();
-            newNotification.setTypeId(newPost.getPostTypeId());
-            newNotification.setRefId(newPost.getAuthorRefId());
-            newNotification.setReceptorId(newPost.getReceptorTypeId());
-            newNotification.setSenderId(newPost.getAuthorRefId());
-            newNotification.setReaded(false);
-            notificationsRemoteClient.createNotification(newNotification);
-        }
-        return postCreated;
+        return postsService.savePost(newPost);
     }
 
-    private PostsEntity fallbackToNotificationService(PostsEntity newPost){
-        log.error("Notification could not be generated, sending data for revision");
-        return newPost;
+    @GetMapping("/posts/{id}")
+    @ResponseStatus(OK)
+    public PostsEntity getPostById(@PathVariable("id") Long idPost) {
+        log.info("Search a User by ID");
+        return postsService.searchPost(idPost);
+    }
+
+    @PostMapping("/messages")
+    @ResponseStatus(CREATED)
+    public MessagesEntity createMessages(@RequestBody MessagesEntity newMessage) {
+        log.info("Create new Menssage");
+        return messagesService.saveMessage(newMessage);
+    }
+
+    @GetMapping("/messages/{id}")
+    @ResponseStatus(OK)
+    public MessagesEntity getMessageById(@PathVariable("id") Long idMessage) {
+        log.info("Search a Message by ID");
+        return messagesService.searchMessage(idMessage);
     }
 
 }

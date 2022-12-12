@@ -25,7 +25,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 springBoot {
-  mainClass = 'com.socialnetwork.microservice.ClientesServiceApplication'
+  mainClass = 'com.socialnetwork.microservice.ServiceApplication'
 }
 
 jar {
@@ -46,6 +46,8 @@ ext {
 dependencies {
  
   compile('org.springframework.boot:spring-boot-starter-web')
+  // JSON
+  compile('com.fasterxml.jackson.core:jackson-databind')
   compile('org.springframework.boot:spring-boot-starter-data-jpa')
   runtime('org.postgresql:postgresql')
   compile('org.flywaydb:flyway-core')
@@ -56,6 +58,9 @@ dependencies {
   //CIRCUIT BREAKER
   compile 'org.springframework.cloud:spring-cloud-starter-openfeign'
   compile('org.springframework.cloud:spring-cloud-starter-hystrix')
+  //RABBIT-MQ BROKER
+  compile('org.springframework.boot:spring-boot-starter-amqp')
+
 }
 
 dependencyManagement {

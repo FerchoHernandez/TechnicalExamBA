@@ -57,4 +57,5 @@ public class NotificationDto {
     public void setReaded(boolean readed) {
         isReaded = readed;
     }
+
 }

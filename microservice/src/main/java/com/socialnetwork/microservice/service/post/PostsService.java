@@ -7,6 +7,4 @@ public interface PostsService {
     PostsEntity savePost(PostsEntity newPost);
 
     PostsEntity searchPost(Long idPost);
-
-    void deletePost(Long idPost);
 }

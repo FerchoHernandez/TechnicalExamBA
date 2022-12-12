@@ -20,16 +20,16 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: com.bmuschko.gradle.docker.DockerRemoteApiPlugin
 
 
-group = 'com.socialnetwork.notification.service'
+group = 'com.socialnetwork.consumerservice'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 springBoot {
-  mainClass = 'com.socialnetwork.notificationservice.NotificationServiceApplication'
+  mainClass = 'com.socialnetwork.consumerservice.ConsumerRMQServiceApplication'
 }
 
 jar {
-  baseName = 'notification-service-sn'
+  baseName = 'consumer-rmq-service-sn'
   version = ''
 }
 
@@ -48,11 +48,13 @@ dependencies {
   compile('org.springframework.boot:spring-boot-starter-web')
   compile('org.springframework.boot:spring-boot-starter-data-jpa')
   runtime('org.postgresql:postgresql')
-  compile('org.flywaydb:flyway-core')
+  compile('com.fasterxml.jackson.core:jackson-databind')
   //SERVICE DISCOVERY
   compile('org.springframework.cloud:spring-cloud-starter-eureka')
   //MONITORING SERVICE
   compile('de.codecentric:spring-boot-admin-starter-client')
+  //RabbitMQ Conection
+  compile('org.springframework.boot:spring-boot-starter-amqp')
 }
 
 dependencyManagement {
@@ -66,15 +68,15 @@ task createDockerfile(type: com.bmuschko.gradle.docker.tasks.image.Dockerfile) {
   destFile = project.file('build/libs/Dockerfile')
   from 'openjdk:8u151-jre-slim'
   maintainer '"marcosf6009.fh@gmail.com"'
-  copyFile 'notification-service-sn.jar', '/opt/notification-service-sn.jar'
+  copyFile 'consumer-rmq-service-sn.jar', '/opt/consumer-rmq-service-sn.jar'
   exposePort 8082
-  entryPoint 'java', '-Djava.security.egd=file:/dev/./urandom', '-jar', '/opt/notification-service-sn.jar'
+  entryPoint 'java', '-Djava.security.egd=file:/dev/./urandom', '-jar', '/opt/consumer-rmq-service-sn.jar'
 }
 
 task buildImage(type: com.bmuschko.gradle.docker.tasks.image.DockerBuildImage) {
   dependsOn createDockerfile
   inputDir = createDockerfile.destFile.parentFile
-  tag = 'fernandohdez88/notification-service-sn-compose:' + project.version.toLowerCase()
+  tag = 'fernandohdez88/consumer-rmq-service-sn-compose:' + project.version.toLowerCase()
 }
 
 createDockerfile.dependsOn bootRepackage
