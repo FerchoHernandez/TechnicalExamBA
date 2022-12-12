@@ -16,17 +16,51 @@ services:
       - 5432:5432
     volumes:
       - ./scripts:/docker-entrypoint-initdb.d postgres
-
+  rabbitmq:
+    image: rabbitmq:3.6.12-management-alpine
+    ports:
+      - "15672:15672"
+      - "5672:5672"
   microservice-social-network:
     image: fernandohdez88/microservice-sn-compose:0.0.1-snapshot
     restart: always
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-service:5432/social_network
+      - SPRING_DATASOURCE_USERNAME=administrator
+      - SPRING_DATASOURCE_PASSWORD=S3cr#t4dm1n
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
+      - SPRING_RABBITMQ_HOST=rabbitmq
     ports:
       - "8081:8081"
     depends_on:
       - postgres-service
-      - discovery-server
-      - monitor
-
-  
+      - rabbitmq
+  notification-service:
+    image: fernandohdez88/notification-service-sn-compose:0.0.1-snapshot
+    #restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-service:5432/social_network
+      - SPRING_DATASOURCE_USERNAME=administrator
+      - SPRING_DATASOURCE_PASSWORD=S3cr#t4dm1n
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
+    ports:
+      - "8082:8082"
+    depends_on:
+      - postgres-service
+  consumer-rabbitmq-service:
+    image: fernandohdez88/consumer-rmq-service-sn-compose:0.0.1-snapshot
+    #restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-service:5432/social_network
+      - SPRING_DATASOURCE_USERNAME=administrator
+      - SPRING_DATASOURCE_PASSWORD=S3cr#t4dm1n
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    ports:
+      - "8083:8083"
+    depends_on:
+      - postgres-service
+      - rabbitmq

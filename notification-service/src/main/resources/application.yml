@@ -17,6 +17,10 @@ eureka:
     metadata-map:
       instanceId: ${instance.id}
 
+ribbon:
+  eureka:
+    enabled: true
+
 management:
   security:
     enabled: false
