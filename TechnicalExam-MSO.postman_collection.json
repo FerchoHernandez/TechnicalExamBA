@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "a43824b9-f368-4466-adde-9447cb9f6768",
+		"name": "TechnicalExam-MSO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jean\",\r\n    \"lastname\": \"Klaaasen\",\r\n    \"username\": \"jklaaasen4\",\r\n    \"email\": \"jklaaasen4@oaic.gov.au\",\r\n    \"is_active\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/microservice-sn/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"microservice-sn",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/microservice-sn/api/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"microservice-sn",
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Titulo de publicacion\",\r\n    \"content\": \"Contenido de publicacion\",\r\n    \"receptorTypeId\": 1,\r\n    \"authorRefId\": 1,\r\n    \"postTypeId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/microservice-sn/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"microservice-sn",
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
